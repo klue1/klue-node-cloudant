@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+</head>
+<body>
+    <div><%= title %></div>
+    
+    <ul>
+    <% elements.forEach(function(element) { %>
+        <li><%= element.name %> - <%= element.value %></li>
+    <% }); %>
+    </ul>
+    
+    <a id='linkButton'>ClickMe</a>
+    
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            toastr.options.timeOut = 1500; // 1.5s
+            toastr.info('Page Loaded!');
+            $('#linkButton').click(function() {
+                toastr.success('Autsch');
+            });
+        });
+  </script>
+</body>
+</html>
