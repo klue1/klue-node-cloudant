@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="ExampleAngularApp">
+<head>
+    <title>Angular</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="/style/angular.css" />
+    <link rel="stylesheet" href="/style/ui-grid-4.0.2.min.css" />
+    
+    <script type="text/javascript" src="/scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/scripts/angular-1.5.5.min.js"></script>
+    <script type="text/javascript" src="/scripts/ui-grid-4.0.2.min.js"></script>
+    <script type="text/javascript" src="/scripts/example-angular.js"></script>
+    
+</head>
+<body>
+    <div>Example Angular</div>
+    <div>
+        <div ng-controller="ExampleAngularCtrl as ctrl">
+            <input ng-model="ctrl.message" ng-keyup="ctrl.changeMessage()">
+            <p>{{ctrl.status}}</p>
+            
+            <div ui-grid-edit class="grid" ui-grid="ctrl.gridOptions">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
