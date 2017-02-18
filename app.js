@@ -5,6 +5,7 @@
 var express = require('express'),
     routes = require('./routes'),
     user = require('./routes/user'),
+    angular = require('./routes/angular'),
     http = require('http'),
     path = require('path'),
     fs = require('fs');
@@ -89,6 +90,7 @@ initDBConnection();
 
 app.get('/', routes.index);
 app.get('/user', user.list);
+app.get('/angular', angular.angular);
 
 function createResponseData(id, name, value, attachments) {
 
